@@ -11,7 +11,6 @@
   <img src="https://img.shields.io/badge/GUI-Yes-green?style=flat-square" alt="GUI">
   <img src="https://img.shields.io/badge/license-MIT-yellow?style=flat-square" alt="License">
 </p>
-
 <p><em>焦糖布丁（Caramel Pudding）是一款专业的OpenClaw AI Gateway安全基线检测工具，致力于为OpenClaw生态系统提供全面的安全保障。它采用多维度检测策略，深入分析OpenClaw的各个安全层面，帮助用户快速识别并修复潜在的安全风险。<br>Caramel Pudding is a professional security baseline scanning tool for OpenClaw AI Gateway, dedicated to providing comprehensive security assurance for the OpenClaw ecosystem. It employs a multi-dimensional detection strategy to deeply analyze various security aspects of OpenClaw, helping users quickly identify and fix potential security risks.</em></p>
 
 <p><em>该工具集成了10大核心检测模块，包括配置安全、技能包安全、端口暴露、认证口令、依赖供应链、主机安全、密钥泄露、反代配置、运行时检查和数据泄露防护，覆盖了OpenClaw部署的各个安全维度。通过直观的图形界面和详细的修复建议，焦糖布丁使安全审计变得简单高效，即使是非专业安全人员也能轻松操作。<br>The tool integrates 10 core detection modules, including configuration security, skills security, port exposure, authentication, dependency supply chain, host security, secrets leakage, proxy configuration, runtime checks, and data loss prevention, covering all security dimensions of OpenClaw deployment. With its intuitive graphical interface and detailed fix suggestions, Caramel Pudding makes security auditing simple and efficient, even for non-professional security personnel.</em></p>
@@ -317,9 +316,19 @@ HTML 报告采用插画风格设计，包含完整的检测结果和修复建议
 
 工具修复方案和内容仅供参考，由于传播、利用此工具所提供的信息而造成的任何直接或者间接的后果及损失，均由使用者本人负责，作者不为此承担任何责任。
 
+## Star History
+
+<a href="https://www.star-history.com/?repos=EdinLyle%2FCaramel-Pudding&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=EdinLyle/Caramel-Pudding&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=EdinLyle/Caramel-Pudding&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=EdinLyle/Caramel-Pudding&type=date&legend=top-left" />
+ </picture>
+</a>
+
 ## 许可证
 
-[MIT License](LICENSE) 
+[MIT License](https://github.com/EdinLyle/Caramel-Pudding/blob/master/LICENSE)) 
 
 ---
 
@@ -485,9 +494,19 @@ For detected security issues, you can:
 
 The tool's fix solutions and content are for reference only. The author is not responsible for any direct or indirect consequences and losses caused by the dissemination or use of the information provided by this tool. The user assumes full responsibility.
 
+## Star History
+
+<a href="https://www.star-history.com/?repos=EdinLyle%2FCaramel-Pudding&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=EdinLyle/Caramel-Pudding&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=EdinLyle/Caramel-Pudding&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=EdinLyle/Caramel-Pudding&type=date&legend=top-left" />
+ </picture>
+</a>
+
 ## License
 
-[MIT License](LICENSE)
+[MIT License](https://github.com/EdinLyle/Caramel-Pudding/blob/master/LICENSE)
 
 ---
 
