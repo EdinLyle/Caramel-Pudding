@@ -59,7 +59,7 @@
 
 | 特性 | 说明 |
 |------|------|
-| 🔍 **11 大检查模块** | 配置安全 · 技能包安全 · 端口暴露 · 认证口令 · 依赖供应链 · 主机安全 · 密钥泄露 · 反代配置 · 运行时检查 · 数据泄露防护 · 漏洞扫描 |
+| 🔍 **12 大检查模块** | 配置安全 · 技能包安全 · 端口暴露 · 认证口令 · 依赖供应链 · 主机安全 · 密钥泄露 · 反代配置 · 运行时检查 · 数据泄露防护 · 漏洞扫描 · 安全基线检查 |
 | 💻 **跨平台支持** | 支持 Windows、Linux、macOS 等多个平台 |
 | 🎨 **图形界面** | 直观的 GUI 操作界面，操作简单易用 |
 | 🤖 **AI 深度审计** | 提供 AI 深度审计功能，智能分析安全问题 |
@@ -125,9 +125,28 @@
 
 ![image-20260323200226678](assets/image-20260323200226678.png)
 
-### AI深度审计(后续看情况集成本地模型和云端模型)
+### AI深度审计
 
-![image-20260322001038811](assets/image-20260322001038811.png)
+以集成本地ollama模型和云端模型的深度审计功能
+
+#### AI大模型配置
+
+![img](assets/567778403-00fb8731-62b1-4c60-960e-072213e7dcf3.png)
+
+#### qwen3.54b深度安全审计报告
+
+![image-20260323214029050](assets/image-20260323214029050.png)
+
+![image-20260323214242238](assets/image-20260323214242238.png)
+
+### DeepSeek深度安全审计报告
+
+![image-20260323215629393](assets/image-20260323215629393.png)
+
+![image-20260323215903752](assets/image-20260323215903752.png)
+
+
+
 
 ### 使用手册
 
@@ -339,6 +358,42 @@
 
 </details>
 
+<details>
+<summary><b>安全基线检查（baseline）</b></summary>
+
+### 安全基线检查内容
+
+| 检查项 | 说明 | 风险等级 |
+|--------|------|---------|
+| 配置文件权限 | 检测配置文件权限是否过于宽松 | MEDIUM |
+| 危险配置标志 | 检测是否启用了allowAll、disableSafety等危险配置 | HIGH/CRITICAL |
+| 认证设置 | 检测认证模式是否设置为token | HIGH |
+| 绑定地址 | 检测绑定地址是否为全网暴露 | HIGH |
+| 技能包完整性 | 检测技能包是否完整，权限是否合理 | MEDIUM |
+| CORS配置 | 检测CORS配置是否使用通配符 | MEDIUM |
+| 速率限制 | 检测是否启用了速率限制 | MEDIUM |
+| 命令限制 | 检测是否限制了危险命令 | HIGH |
+| 会话超时 | 检测会话超时设置是否合理 | MEDIUM |
+| 资源限制 | 检测是否设置了资源限制 | MEDIUM |
+| 日志配置 | 检测日志级别是否合理 | LOW |
+| 自动更新 | 检测是否启用了自动更新 | LOW |
+
+### 检测方法
+- 检查openclaw.json配置文件中的相关设置
+- 检查文件系统权限
+- 检查技能包目录结构和权限
+
+### 修复建议
+- 配置文件权限设置为600
+- 禁用危险配置标志
+- 启用认证并设置为token模式
+- 设置绑定地址为loopback或lan
+- 限制危险命令执行
+- 配置合理的会话超时和资源限制
+- 启用自动更新以获取安全补丁
+
+</details>
+
 ---
 
 ## 评分体系
@@ -420,7 +475,7 @@ HTML 报告采用插画风格设计，包含完整的检测结果和修复建议
 
 | Feature | Description |
 |---------|-------------|
-| 🔍 **11 Check Modules** | config · skills · ports · auth · deps · host · secrets · proxy · runtime · dlp · vulnerability |
+| 🔍 **12 Check Modules** | config · skills · ports · auth · deps · host · secrets · proxy · runtime · dlp · vulnerability · baseline |
 | 💻 **Cross-Platform** | Supports Windows, Linux, macOS |
 | 🎨 **GUI Interface** | Intuitive graphical user interface, easy to use |
 | 🤖 **AI-Assisted Audit** | AI-powered deep security analysis |
@@ -519,6 +574,7 @@ HTML 报告采用插画风格设计，包含完整的检测结果和修复建议
 | **runtime** | Auth mode, command restrictions, session timeout, resource limits, logging, auto-update, debug mode |
 | **dlp** | File hash baseline, Brain/Memory backup, sensitive files |
 | **vulnerability** | CVE-2026-25253 (authentication token theft), default public exposure, plugin poisoning, permission escalation, architecture flaws, version vulnerabilities |
+| **baseline** | Configuration permissions, dangerous flags, authentication settings, network exposure, skills integrity, CORS configuration, rate limiting, command restrictions, session timeout, resource limits, logging, auto-update |
 
 ---
 
