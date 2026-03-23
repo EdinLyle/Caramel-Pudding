@@ -1,6 +1,6 @@
 <div align="center">
-<h1>🦞 焦糖布丁</h1>
-<h3>OpenClaw 基线安全检测工具</h3>
+<h1>🦞 焦糖布丁v3.0</h1>
+<h3>OpenClaw 基线安全检测和漏洞扫描工具</h3>
 
 <p>
   <a href="#-快速开始"><img src="https://img.shields.io/badge/快速开始-中文-blue?style=flat-square" alt="快速开始"></a>
@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/GUI-Yes-green?style=flat-square" alt="GUI">
   <img src="https://img.shields.io/badge/license-MIT-yellow?style=flat-square" alt="License">
 </p>
-<p><em>焦糖布丁（Caramel Pudding）是一款专业的OpenClaw AI Gateway安全基线检测工具，致力于为OpenClaw生态系统提供全面的安全保障。它采用多维度检测策略，深入分析OpenClaw的各个安全层面，帮助用户快速识别并修复潜在的安全风险。<br>Caramel Pudding is a professional security baseline scanning tool for OpenClaw AI Gateway, dedicated to providing comprehensive security assurance for the OpenClaw ecosystem. It employs a multi-dimensional detection strategy to deeply analyze various security aspects of OpenClaw, helping users quickly identify and fix potential security risks.</em></p>
+<p><em>焦糖布丁（Caramel Pudding）是一款专用于的OpenClaw AI Gateway安全基线和漏洞检测工具，致力于为OpenClaw生态系统提供全面的安全保障。它采用多维度检测策略，深入分析OpenClaw的各个安全层面，帮助用户快速识别并修复潜在的安全风险。<br>Caramel Pudding is a professional security baseline scanning tool for OpenClaw AI Gateway, dedicated to providing comprehensive security assurance for the OpenClaw ecosystem. It employs a multi-dimensional detection strategy to deeply analyze various security aspects of OpenClaw, helping users quickly identify and fix potential security risks.</em></p>
 
 <p><em>该工具集成了10大核心检测模块，包括配置安全、技能包安全、端口暴露、认证口令、依赖供应链、主机安全、密钥泄露、反代配置、运行时检查和数据泄露防护，覆盖了OpenClaw部署的各个安全维度。通过直观的图形界面和详细的修复建议，焦糖布丁使安全审计变得简单高效，即使是非专业安全人员也能轻松操作。<br>The tool integrates 10 core detection modules, including configuration security, skills security, port exposure, authentication, dependency supply chain, host security, secrets leakage, proxy configuration, runtime checks, and data loss prevention, covering all security dimensions of OpenClaw deployment. With its intuitive graphical interface and detailed fix suggestions, Caramel Pudding makes security auditing simple and efficient, even for non-professional security personnel.</em></p>
 
