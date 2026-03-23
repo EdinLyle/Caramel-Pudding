@@ -123,7 +123,7 @@
 
 ### 漏洞扫描功能
 
-![image-20260323200226678](C:\Users\31936\AppData\Roaming\Typora\typora-user-images\image-20260323200226678.png)
+![image-20260323200226678](assets/image-20260323200226678.png)
 
 ### AI深度审计(后续看情况集成本地模型和云端模型)
 
