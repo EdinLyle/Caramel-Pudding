@@ -5,7 +5,7 @@
 <p>
   <a href="#-快速开始"><img src="https://img.shields.io/badge/快速开始-中文-blue?style=flat-square" alt="快速开始"></a>
   <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick%20Start-English-green?style=flat-square" alt="Quick Start EN"></a>
-  <img src="https://img.shields.io/badge/version-1.0.0-orange?style=flat-square" alt="Version">
+  <img src="https://img.shields.io/badge/version-2.0.0-orange?style=flat-square" alt="Version">
   <img src="https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey?style=flat-square" alt="Platform">
   <img src="https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square&logo=python" alt="Python">
   <img src="https://img.shields.io/badge/GUI-Yes-green?style=flat-square" alt="GUI">
@@ -59,7 +59,7 @@
 
 | 特性 | 说明 |
 |------|------|
-| 🔍 **10 大检查模块** | 配置安全 · 技能包安全 · 端口暴露 · 认证口令 · 依赖供应链 · 主机安全 · 密钥泄露 · 反代配置 · 运行时检查 · 数据泄露防护 |
+| 🔍 **11 大检查模块** | 配置安全 · 技能包安全 · 端口暴露 · 认证口令 · 依赖供应链 · 主机安全 · 密钥泄露 · 反代配置 · 运行时检查 · 数据泄露防护 · 漏洞扫描 |
 | 💻 **跨平台支持** | 支持 Windows、Linux、macOS 等多个平台 |
 | 🎨 **图形界面** | 直观的 GUI 操作界面，操作简单易用 |
 | 🤖 **AI 深度审计** | 提供 AI 深度审计功能，智能分析安全问题 |
@@ -257,6 +257,84 @@
 
 </details>
 
+<details>
+<summary><b>漏洞扫描（vulnerability）</b></summary>
+
+### 支持检测的已知漏洞
+
+#### 1. CVE-2026-25253
+- **漏洞类型**：认证令牌窃取
+- **风险等级**：CRITICAL（严重）
+- **漏洞描述**：当OpenClaw未启用认证模式或令牌存储在内存中时，可能导致未授权访问和令牌窃取
+- **检测方法**：
+  - 检查openclaw.json中的认证模式配置
+  - 检查令牌存储方式
+- **修复建议**：
+  - 启用认证模式，设置为"token"
+  - 更新OpenClaw到最新版本
+  - 配置安全的令牌存储方式
+
+#### 2. 默认暴露公网
+- **漏洞类型**：网络暴露
+- **风险等级**：CRITICAL（严重）
+- **漏洞描述**：当绑定地址为0.0.0.0或未设置时，可能导致OpenClaw全网暴露，任何人都可以访问
+- **检测方法**：
+  - 检查openclaw.json中的绑定地址配置
+  - 检查使用的端口是否为常见端口
+- **修复建议**：
+  - 修改绑定地址为"loopback"或"lan"
+  - 配置防火墙规则限制访问
+  - 启用认证保护
+
+#### 3. 插件投毒
+- **漏洞类型**：供应链攻击
+- **风险等级**：HIGH（高危）
+- **漏洞描述**：技能包来源不明或使用宽松依赖版本，可能导致恶意代码注入
+- **检测方法**：
+  - 检查技能包的作者信息
+  - 检查技能包的依赖版本配置
+- **修复建议**：
+  - 只使用来自可信来源的技能包
+  - 运行`openclaw skills verify`验证技能包
+  - 定期更新技能包
+
+#### 4. 权限失控
+- **漏洞类型**：权限提升
+- **风险等级**：HIGH（高危）
+- **漏洞描述**：未配置权限控制或启用allowAll权限，可能导致权限提升和未授权操作
+- **检测方法**：
+  - 检查openclaw.json中的权限配置
+  - 检查管理员和用户权限设置
+- **修复建议**：
+  - 配置权限控制
+  - 禁用allowAll权限
+  - 遵循最小权限原则
+
+#### 5. 架构缺陷
+- **漏洞类型**：架构安全
+- **风险等级**：CRITICAL（严重）
+- **漏洞描述**：沙箱未启用、网络未隔离、资源未限制，可能导致安全边界被突破
+- **检测方法**：
+  - 检查openclaw.json中的架构配置
+  - 检查沙箱、网络隔离和资源限制设置
+- **修复建议**：
+  - 启用沙箱
+  - 配置网络隔离
+  - 设置资源限制
+
+#### 6. 版本漏洞
+- **漏洞类型**：版本安全
+- **风险等级**：HIGH（高危）
+- **漏洞描述**：当前OpenClaw版本存在已知安全漏洞
+- **检测方法**：
+  - 检查package.json中的版本信息
+  - 对比已知漏洞版本列表
+- **修复建议**：
+  - 更新OpenClaw到最新版本
+  - 定期检查安全公告
+
+</details>
+
 ---
 
 ## 评分体系
@@ -338,7 +416,7 @@ HTML 报告采用插画风格设计，包含完整的检测结果和修复建议
 
 | Feature | Description |
 |---------|-------------|
-| 🔍 **10 Check Modules** | config · skills · ports · auth · deps · host · secrets · proxy · runtime · dlp |
+| 🔍 **11 Check Modules** | config · skills · ports · auth · deps · host · secrets · proxy · runtime · dlp · vulnerability |
 | 💻 **Cross-Platform** | Supports Windows, Linux, macOS |
 | 🎨 **GUI Interface** | Intuitive graphical user interface, easy to use |
 | 🤖 **AI-Assisted Audit** | AI-powered deep security analysis |
@@ -436,6 +514,7 @@ HTML 报告采用插画风格设计，包含完整的检测结果和修复建议
 | **proxy** | Trusted proxies, X-Forwarded-For, security headers, proxy chain |
 | **runtime** | Auth mode, command restrictions, session timeout, resource limits, logging, auto-update, debug mode |
 | **dlp** | File hash baseline, Brain/Memory backup, sensitive files |
+| **vulnerability** | CVE-2026-25253 (authentication token theft), default public exposure, plugin poisoning, permission escalation, architecture flaws, version vulnerabilities |
 
 ---
 

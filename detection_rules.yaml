@@ -1,0 +1,299 @@
+# 检测规则配置文件
+
+# 漏洞扫描规则
+vulnerability:
+  # CVE漏洞检测规则
+  cve_rules:
+    - id: CVE-2026-25253
+      name: 认证令牌窃取漏洞
+      severity: CRITICAL
+      description: OpenClaw AI Gateway 存在认证令牌窃取漏洞，攻击者可通过构造特定请求获取认证令牌
+      check: "版本检查 + 认证配置检查"
+      fix: "启用认证模式，设置 auth.mode: token，更新OpenClaw到最新版本"
+      affected_versions:
+        - "< 1.2.0"
+    - id: CVE-2026-25254
+      name: 默认暴露公网漏洞
+      severity: HIGH
+      description: OpenClaw默认配置会将服务暴露到公网，存在未授权访问风险
+      check: "绑定地址配置检查"
+      fix: "修改绑定地址为loopback或lan，配置防火墙规则"
+      affected_versions:
+        - "< 1.1.0"
+    - id: CVE-2026-25255
+      name: 插件投毒漏洞
+      severity: HIGH
+      description: OpenClaw技能包安装机制存在投毒风险，可能导致恶意代码执行
+      check: "技能包来源检查 + 签名验证"
+      fix: "只使用来自可信来源的技能包，运行 openclaw skills verify"
+      affected_versions:
+        - "< 1.3.0"
+    - id: CVE-2026-25256
+      name: 权限失控漏洞
+      severity: HIGH
+      description: OpenClaw权限控制机制存在缺陷，可能导致权限提升
+      check: "权限配置检查"
+      fix: "配置权限控制，禁用allowAll权限，遵循最小权限原则"
+      affected_versions:
+        - "< 1.2.5"
+    - id: CVE-2026-25257
+      name: 架构缺陷漏洞
+      severity: MEDIUM
+      description: OpenClaw架构存在安全缺陷，可能导致安全隔离失效
+      check: "沙箱配置检查 + 网络隔离检查"
+      fix: "启用沙箱，配置网络隔离，设置资源限制"
+      affected_versions:
+        - "< 1.3.0"
+
+  # 自定义漏洞规则
+  custom_rules:
+    - id: custom-001
+      name: 硬编码密钥漏洞
+      severity: MEDIUM
+      description: 配置文件中存在硬编码的API密钥或令牌
+      check: "配置文件内容检查"
+      fix: "将硬编码密钥移至环境变量，使用secrets manager管理"
+      patterns:
+        - "api_key\s*:\s*['\"].*['\"]"
+        - "token\s*:\s*['\"].*['\"]"
+    - id: custom-002
+      name: 不安全的绑定地址
+      severity: HIGH
+      description: 服务绑定到0.0.0.0，可能导致公网暴露
+      check: "绑定地址配置检查"
+      fix: "修改绑定地址为127.0.0.1或特定内网地址"
+      patterns:
+        - "bind\s*:\s*['\"](all|0.0.0.0)['\"]"
+    - id: custom-003
+      name: 禁用认证
+      severity: CRITICAL
+      description: 认证功能被禁用，可能导致未授权访问
+      check: "认证配置检查"
+      fix: "启用认证，设置强密码或令牌"
+      patterns:
+        - "auth\.mode\s*:\s*['\"](none|disabled)['\"]"
+        - "auth\.enabled\s*:\s*false"
+
+# 安全基线检查规则
+baseline:
+  # 配置安全规则
+  config_security:
+    - id: config-001
+      name: 配置文件权限
+      severity: MEDIUM
+      description: 配置文件权限过于宽松，可能导致敏感信息泄露
+      check: "文件权限检查"
+      fix: "修改配置文件权限为600 (Linux)"
+      expected: "文件权限应小于等于600"
+    - id: config-002
+      name: 沙箱配置
+      severity: HIGH
+      description: 沙箱功能未启用，可能导致安全隔离失效
+      check: "配置文件检查"
+      fix: "在openclaw.json中启用沙箱，设置 sandbox: true"
+      expected: "sandbox: true"
+    - id: config-003
+      name: 认证配置
+      severity: CRITICAL
+      description: 认证功能未正确配置，可能导致未授权访问
+      check: "配置文件检查"
+      fix: "设置认证模式为token，启用认证"
+      expected: "auth.mode: token"
+    - id: config-004
+      name: 调试模式
+      severity: MEDIUM
+      description: 调试模式已开启，可能泄露敏感信息
+      check: "配置文件检查"
+      fix: "在生产环境关闭调试模式，设置 debug: false"
+      expected: "debug: false"
+
+  # 技能包安全规则
+  skills_security:
+    - id: skills-001
+      name: 恶意技能包
+      severity: CRITICAL
+      description: 检测到恶意技能包，可能导致安全风险
+      check: "技能包内容检查"
+      fix: "移除恶意技能包，运行 openclaw skills update"
+      patterns:
+        - "eval\(|exec\(|system\("
+        - "require\(['\"]child_process['\"]\)"
+    - id: skills-002
+      name: 权限过高
+      severity: HIGH
+      description: 技能包请求了不必要的高权限
+      check: "技能包权限检查"
+      fix: "审查技能包权限，移除不必要的权限"
+      patterns:
+        - "bash" 
+        - "file_write"
+        - "network_fetch"
+
+  # 端口暴露规则
+  ports_security:
+    - id: ports-001
+      name: 公网暴露
+      severity: HIGH
+      description: 服务暴露到公网，存在未授权访问风险
+      check: "网络端口检查"
+      fix: "修改绑定地址为loopback或lan，配置防火墙规则"
+      expected: "绑定地址不应为0.0.0.0或all"
+    - id: ports-002
+      name: 无认证访问
+      severity: CRITICAL
+      description: 服务暴露且无认证保护
+      check: "认证配置检查 + 端口暴露检查"
+      fix: "启用认证，设置强密码或令牌"
+      expected: "认证应启用且绑定地址不应为0.0.0.0"
+
+  # 认证与口令规则
+  auth_security:
+    - id: auth-001
+      name: 弱密码
+      severity: HIGH
+      description: 密码强度不足，容易被暴力破解
+      check: "密码强度检查"
+      fix: "使用强随机密码，定期轮换密码"
+      expected: "密码长度至少12位，包含大小写字母、数字和特殊字符"
+    - id: auth-002
+      name: 认证未启用
+      severity: CRITICAL
+      description: 认证功能未启用，可能导致未授权访问
+      check: "认证配置检查"
+      fix: "启用认证，设置认证模式为token"
+      expected: "auth.enabled: true"
+
+  # 依赖供应链规则
+  deps_security:
+    - id: deps-001
+      name: 依赖漏洞
+      severity: MEDIUM
+      description: 检测到依赖包存在安全漏洞
+      check: "依赖包检查"
+      fix: "运行 npm audit fix 或 pnpm audit fix，更新依赖到最新版本"
+      expected: "无高危依赖漏洞"
+    - id: deps-002
+      name: 过时依赖
+      severity: LOW
+      description: 依赖包版本过时，可能存在安全风险
+      check: "依赖版本检查"
+      fix: "更新依赖到最新安全版本"
+      expected: "依赖包版本应保持最新"
+
+  # 主机安全规则
+  host_security:
+    - id: host-001
+      name: 防火墙未启用
+      severity: MEDIUM
+      description: 系统防火墙未启用，可能导致网络攻击
+      check: "防火墙状态检查"
+      fix: "启用防火墙，限制必要端口的访问"
+      expected: "防火墙应处于启用状态"
+    - id: host-002
+      name: 权限过高
+      severity: MEDIUM
+      description: OpenClaw以root/管理员权限运行，存在安全风险
+      check: "运行权限检查"
+      fix: "以非特权用户运行OpenClaw"
+      expected: "OpenClaw应以普通用户权限运行"
+
+  # 密钥泄露规则
+  secrets_security:
+    - id: secrets-001
+      name: 硬编码密钥
+      severity: HIGH
+      description: 代码或配置中存在硬编码的密钥或令牌
+      check: "代码和配置文件检查"
+      fix: "移除硬编码的密钥，使用环境变量存储敏感信息"
+      patterns:
+        - "api_key\s*=\s*['\"].*['\"]"
+        - "token\s*=\s*['\"].*['\"]"
+        - "password\s*=\s*['\"].*['\"]"
+    - id: secrets-002
+      name: 敏感文件泄露
+      severity: MEDIUM
+      description: 检测到包含敏感信息的文件
+      check: "文件内容检查"
+      fix: "备份并清理敏感文件，使用环境变量存储敏感信息"
+      patterns:
+        - "private_key"
+        - "secret_key"
+        - "access_token"
+
+  # 反代配置规则
+  proxy_security:
+    - id: proxy-001
+      name: 不安全的代理设置
+      severity: MEDIUM
+      description: 反向代理配置不安全，可能导致安全风险
+      check: "反代配置检查"
+      fix: "配置适当的代理设置，启用认证，配置HTTPS"
+      expected: "应配置受信任代理和安全头"
+    - id: proxy-002
+      name: X-Forwarded-For信任
+      severity: MEDIUM
+      description: 未正确配置X-Forwarded-For头信任，可能导致IP伪造
+      check: "反代配置检查"
+      fix: "正确配置trustedProxies，信任X-Forwarded-For头"
+      expected: "trustedProxies应配置为可信代理地址"
+
+  # 运行时规则
+  runtime_security:
+    - id: runtime-001
+      name: 运行时异常
+      severity: LOW
+      description: 检测到OpenClaw运行时异常
+      check: "运行时状态检查"
+      fix: "重启OpenClaw服务，检查日志文件"
+      expected: "服务应正常运行，无异常日志"
+    - id: runtime-002
+      name: 资源使用异常
+      severity: MEDIUM
+      description: OpenClaw资源使用异常，可能影响系统稳定性
+      check: "资源使用检查"
+      fix: "配置资源限制，优化系统配置"
+      expected: "CPU和内存使用应在合理范围内"
+
+  # 数据泄露防护规则
+  dlp_security:
+    - id: dlp-001
+      name: 敏感数据未加密
+      severity: MEDIUM
+      description: 敏感数据未加密存储，可能导致数据泄露
+      check: "数据存储检查"
+      fix: "实施数据加密，配置访问控制"
+      expected: "敏感数据应加密存储"
+    - id: dlp-002
+      name: 数据访问控制
+      severity: MEDIUM
+      description: 数据访问控制不足，可能导致未授权访问
+      check: "访问控制检查"
+      fix: "配置适当的访问控制，限制数据访问权限"
+      expected: "应实施最小权限原则的访问控制"
+
+# 规则配置选项
+config:
+  # 漏洞库更新设置
+  vulnerability_database:
+    update_frequency: "daily"  # daily, weekly, monthly
+    auto_update: true
+    custom_sources: []
+  
+  # 基线标准设置
+  baseline_standards:
+    default: "owasp"
+    available: ["owasp", "nist", "custom"]
+    custom_standard_path: "custom_baseline.yaml"
+  
+  # 扫描设置
+  scanning:
+    timeout: 300  # 扫描超时时间（秒）
+    max_concurrent_checks: 5  # 最大并发检查数
+    retry_attempts: 3  # 失败重试次数
+  
+  # 报告设置
+  reporting:
+    include_fixed_issues: false
+    include_info_level: true
+    report_format: "html"  # html, json, markdown
+    report_template: "default"
