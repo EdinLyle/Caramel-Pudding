@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦞 焦糖布丁文件完整性检查报告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+            margin: 40px;
+            background-color: #FFF9F0;
+            color: #2C2C2C;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            background-color: #73D13D;
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 3px solid #2C2C2C;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 4px 4px 0 #2C2C2C;
+            text-align: center;
+        }
+        .disclaimer {
+            background-color: #FFD93D;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+            text-align: center;
+            font-weight: bold;
+            color: #2C2C2C;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAgMTAgMTgwIDE4MCIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0xMCAxODAgMTgwIDEwIiBmaWxsPSIjZmZmZmZmIi8+PHBhdGggZD0iTTEwIDkwIDE4MCA5MCIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPg==') no-repeat center;
+            background-size: contain;
+            opacity: 0.2;
+        }
+        .info-card {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+            text-align: center;
+        }
+        .info-card h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2C2C2C;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-card p {
+            font-size: 16px;
+            color: #2C2C2C;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+        }
+        th {
+            background-color: #73D13D;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            color: white;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #2C2C2C;
+        }
+        tr:hover {
+            background-color: #F0F0F0;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border: 3px solid #2C2C2C;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tag-intact {
+            background: #51CF66;
+            color: white;
+        }
+        .tag-tampered {
+            background: #FA5252;
+            color: white;
+        }
+        .tag-missing {
+            background: #FA5252;
+            color: white;
+        }
+        .tag-no-baseline {
+            background: #FFD93D;
+            color: #2C2C2C;
+        }
+        .recommendation {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 30px;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+        }
+        .recommendation h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2C2C2C;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .recommendation ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .recommendation li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .recommendation li::before {
+            content: '•';
+            color: #73D13D;
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦞 焦糖布丁 文件完整性检查报告</h1>
+            <p>生成时间: 2026-03-24 20:40:45</p>
+            <p>检测工具: 🦞 焦糖布丁</p>
+            <p>工具作者: 0x八月</p>
+        </div>
+        
+        <div class="disclaimer">
+            ⚠️ 工具修复方案和内容仅供参考，由于传播、利用此工具所提供的信息而造成的任何直接或者间接的后果及损失，均由使用者本人负责，作者不为此承担任何责任。
+        </div>
+
+        <div class="info-card">
+            <h2>整体状态</h2>
+            <p>状态: TAMPERED</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>文件</th>
+                    <th>状态</th>
+                    <th>结果</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>SOUL.md</td>
+                    <td><span class="tag tag-missing">MISSING</span></td>
+                    <td>文件不存在</td>
+                </tr>
+
+                <tr>
+                    <td>IDENTITY.md</td>
+                    <td><span class="tag tag-missing">MISSING</span></td>
+                    <td>文件不存在</td>
+                </tr>
+
+                <tr>
+                    <td>TOOLS.md</td>
+                    <td><span class="tag tag-missing">MISSING</span></td>
+                    <td>文件不存在</td>
+                </tr>
+
+                <tr>
+                    <td>AGENTS.md</td>
+                    <td><span class="tag tag-missing">MISSING</span></td>
+                    <td>文件不存在</td>
+                </tr>
+
+                <tr>
+                    <td>SECURITY.md</td>
+                    <td><span class="tag tag-missing">MISSING</span></td>
+                    <td>文件不存在</td>
+                </tr>
+
+                <tr>
+                    <td>MEMORY.md</td>
+                    <td><span class="tag tag-missing">MISSING</span></td>
+                    <td>文件不存在</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="recommendation">
+            <h2>安全建议</h2>
+            <ul>
+                <li>定期进行文件完整性检查，确保系统文件未被篡改</li>
+                <li>为重要文件创建基线，以便后续检查</li>
+                <li>修复或替换被篡改的文件</li>
+                <li>建立文件完整性监控机制，及时发现异常</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

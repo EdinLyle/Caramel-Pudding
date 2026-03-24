@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦞 焦糖布丁自动加固报告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+            margin: 40px;
+            background-color: #FFF9F0;
+            color: #2C2C2C;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            background-color: #73D13D;
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 3px solid #2C2C2C;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 4px 4px 0 #2C2C2C;
+            text-align: center;
+        }
+        .disclaimer {
+            background-color: #FFD93D;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+            text-align: center;
+            font-weight: bold;
+            color: #2C2C2C;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAgMTAgMTgwIDE4MCIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0xMCAxODAgMTgwIDEwIiBmaWxsPSIjZmZmZmZmIi8+PHBhdGggZD0iTTEwIDkwIDE4MCA5MCIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPg==') no-repeat center;
+            background-size: contain;
+            opacity: 0.2;
+        }
+        .info-card {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+        }
+        .info-card h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2C2C2C;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-card p {
+            font-size: 16px;
+            color: #2C2C2C;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+        }
+        th {
+            background-color: #73D13D;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            color: white;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #2C2C2C;
+        }
+        tr:hover {
+            background-color: #F0F0F0;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border: 3px solid #2C2C2C;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tag-success {
+            background: #51CF66;
+            color: white;
+        }
+        .tag-error {
+            background: #FA5252;
+            color: white;
+        }
+        .tag-warn {
+            background: #FFD93D;
+            color: #2C2C2C;
+        }
+        .recommendation {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 30px;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+        }
+        .recommendation h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2C2C2C;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .recommendation ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .recommendation li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .recommendation li::before {
+            content: '•';
+            color: #73D13D;
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦞 焦糖布丁 自动加固报告</h1>
+            <p>生成时间: 2026-03-24 20:40:35</p>
+            <p>检测工具: 🦞 焦糖布丁</p>
+            <p>工具作者: 0x八月</p>
+        </div>
+        
+        <div class="disclaimer">
+            ⚠️ 工具修复方案和内容仅供参考，由于传播、利用此工具所提供的信息而造成的任何直接或者间接的后果及损失，均由使用者本人负责，作者不为此承担任何责任。
+        </div>
+
+        <div class="info-card">
+            <h2>加固信息</h2>
+            <p><strong>备份创建:</strong> 已创建备份: D:\KFtoolbox\openclaw\.openclaw\secureclaw.bak.20260324_204021</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>加固项</th>
+                    <th>状态</th>
+                    <th>结果</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>gateway_bind</td>
+                    <td><span class="tag tag-warn">WARN</span></td>
+                    <td>网关绑定地址为 loopback，请确认是否安全</td>
+                </tr>
+
+                <tr>
+                    <td>file_permissions</td>
+                    <td><span class="tag tag-warn">INFO</span></td>
+                    <td>Windows系统不支持文件权限设置</td>
+                </tr>
+
+                <tr>
+                    <td>privacy_directives</td>
+                    <td><span class="tag tag-warn">FAIL</span></td>
+                    <td>未找到SOUL.md文件</td>
+                </tr>
+
+                <tr>
+                    <td>injection_awareness</td>
+                    <td><span class="tag tag-warn">FAIL</span></td>
+                    <td>未找到SOUL.md文件</td>
+                </tr>
+
+                <tr>
+                    <td>cognitive_baselines</td>
+                    <td><span class="tag tag-warn">WARN</span></td>
+                    <td>未找到认知文件，无法创建基线</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="recommendation">
+            <h2>加固建议</h2>
+            <ul>
+                <li>定期运行自动加固，确保系统安全配置</li>
+                <li>备份重要配置文件，以便在需要时恢复</li>
+                <li>审查加固结果，确保所有安全措施都已正确应用</li>
+                <li>结合安全审计，全面提升系统安全水平</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

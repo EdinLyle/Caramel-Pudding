@@ -1,11 +1,11 @@
 <div align="center">
-<h1>🦞 焦糖布丁v3.0</h1>
+<h1>🦞 焦糖布丁v4.0</h1>
 <h3>OpenClaw 基线安全检测和漏洞扫描工具</h3>
 
 <p>
   <a href="#-快速开始"><img src="https://img.shields.io/badge/快速开始-中文-blue?style=flat-square" alt="快速开始"></a>
   <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick%20Start-English-green?style=flat-square" alt="Quick Start EN"></a>
-  <img src="https://img.shields.io/badge/version-2.0.0-orange?style=flat-square" alt="Version">
+  <img src="https://img.shields.io/badge/version-4.0.0-orange?style=flat-square" alt="Version">
   <img src="https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey?style=flat-square" alt="Platform">
   <img src="https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square&logo=python" alt="Python">
   <img src="https://img.shields.io/badge/GUI-Yes-green?style=flat-square" alt="GUI">
@@ -13,9 +13,9 @@
 </p>
 <p><em>焦糖布丁（Caramel Pudding）是一款专用于的OpenClaw AI Gateway安全基线和漏洞检测工具，致力于为OpenClaw生态系统提供全面的安全保障。它采用多维度检测策略，深入分析OpenClaw的各个安全层面，帮助用户快速识别并修复潜在的安全风险。<br>Caramel Pudding is a professional security baseline scanning tool for OpenClaw AI Gateway, dedicated to providing comprehensive security assurance for the OpenClaw ecosystem. It employs a multi-dimensional detection strategy to deeply analyze various security aspects of OpenClaw, helping users quickly identify and fix potential security risks.</em></p>
 
-<p><em>该工具集成了12大核心检测模块，包括配置安全、技能包安全、端口暴露、认证口令、依赖供应链、主机安全、密钥泄露、反代配置、运行时检查、漏洞扫描、安全基线检查和数据泄露防护，覆盖了OpenClaw部署的各个安全维度。通过直观的图形界面和详细的修复建议，焦糖布丁使安全审计变得简单高效，即使是非专业安全人员也能轻松操作。<br>The tool integrates 10 core detection modules, including configuration security, skills security, port exposure, authentication, dependency supply chain, host security, secrets leakage, proxy configuration, runtime checks, and data loss prevention, covering all security dimensions of OpenClaw deployment. With its intuitive graphical interface and detailed fix suggestions, Caramel Pudding makes security auditing simple and efficient, even for non-professional security personnel.</em></p>
+<p><em>该工具集成了12大核心检测模块，包括配置安全、技能包安全、端口暴露、认证口令、依赖供应链、主机安全、密钥泄露、反代配置、运行时检查、漏洞扫描、安全基线检查和数据泄露防护，覆盖了OpenClaw部署的各个安全维度。通过直观的图形界面和详细的修复建议，焦糖布丁使安全审计变得简单高效，即使是非专业安全人员也能轻松操作。<br>The tool integrates 12 core detection modules, including configuration security, skills security, port exposure, authentication, dependency supply chain, host security, secrets leakage, proxy configuration, runtime checks, vulnerability scanning, security baseline checking, and data loss prevention, covering all security dimensions of OpenClaw deployment. With its intuitive graphical interface and detailed fix suggestions, Caramel Pudding makes security auditing simple and efficient, even for non-professional security personnel.</em></p>
 
-<p><em>焦糖布丁不仅提供全面的安全检测，还支持一键自动修复功能，帮助用户快速解决安全问题。同时，它生成美观的插画风格HTML报告，详细展示检测结果和修复建议，方便用户进行安全评估和审计。<br>Caramel Pudding not only provides comprehensive security detection but also supports one-click automatic repair functionality to help users quickly resolve security issues. Additionally, it generates beautiful illustration-style HTML reports that detail scan results and fix suggestions, facilitating security assessment and auditing.</em></p>
+<p><em>焦糖布丁提供全面的安全检测，支持一键自动修复功能，帮助用户快速解决安全问题。同时，它生成美观的插画风格HTML报告，详细展示检测结果和修复建议，方便用户进行安全评估和审计。<br>Caramel Pudding provides comprehensive security detection and supports one-click automatic repair functionality to help users quickly resolve security issues. Additionally, it generates beautiful illustration-style HTML reports that detail scan results and fix suggestions, facilitating security assessment and auditing.</em></p>
 
 ![image-20260322003918169](assets/image-20260322003918169.png)
 
@@ -60,6 +60,7 @@
 | 特性 | 说明 |
 |------|------|
 | 🔍 **12 大检查模块** | 配置安全 · 技能包安全 · 端口暴露 · 认证口令 · 依赖供应链 · 主机安全 · 密钥泄露 · 反代配置 · 运行时检查 · 数据泄露防护 · 漏洞扫描 · 安全基线检查 |
+| 🔒 **龙虾安全守卫** | 安全审计 · 自动加固 · 技能扫描 · 文件完整性检查 · 隐私检查 · 行为检测检查 |
 | 💻 **跨平台支持** | 支持 Windows、Linux、macOS 等多个平台 |
 | 🎨 **图形界面** | 直观的 GUI 操作界面，操作简单易用 |
 | 🤖 **AI 深度审计** | 提供 AI 深度审计功能，智能分析安全问题 |
@@ -88,7 +89,7 @@
 
 ### 直接使用可执行文件
 
-1. 从 `build/windows/dist/` 目录下载 `焦糖布丁v1.0.exe`
+1. 从 `build/windows/dist/` 目录下载 `焦糖布丁v4.0.exe`
 2. 双击运行可执行文件
 3. 在界面中选择 OpenClaw 安装目录
 4. 勾选需要检测的安全维度
@@ -111,7 +112,24 @@
 
 ### 工具主界面图
 
-![image-20260322000201614](assets/image-20260322000201614.png)
+#### 基础安全防护
+
+![image-20260324144427004](assets/image-20260324144427004.png)
+
+#### 高级防护
+
+![image-20260324144607860](assets/image-20260324144607860.png)
+
+#### 龙虾安全守卫
+
+- 安全审计
+- 自动加固
+- Skills技能安全扫描
+- 完整性检查
+- 隐私检查
+- 行为检测检查
+
+![image-20260324144716786](assets/image-20260324144716786.png)
 
 ### 修复风险功能(部分修复还未能完全实现修复，正在开发中)
 
@@ -145,32 +163,37 @@
 
 ![image-20260323215903752](assets/image-20260323215903752.png)
 
+### 自动加固功能
 
-
+![image-20260324130603848](assets/image-20260324130603848.png)
 
 ### 使用手册
 
-![image-20260322000519054](assets/image-20260322000519054.png)
+![image-20260324205017478](assets/image-20260324205017478.png)
 
 ### 修复实现(部分一键修复功能还在开发)
 
-![image-20260322000541664](assets/image-20260322000541664.png)
+![image-20260324205038390](assets/image-20260324205038390.png)
 
 ### 关于工具
 
-![image-20260322001903795](assets/image-20260322001903795.png)
+![image-20260324205105710](assets/image-20260324205105710.png)
 
-### 改进建议![image-20260322000706204](assets/image-20260322000706204.png)
+### 改进建议
+
+![image-20260324205134143](assets/image-20260324205134143.png)
 
 ---
 
 ## 检查模块详解
 
+### 基础安全检测
+
 <details>
 <summary><b>配置安全检测（config）</b></summary>
 
 | 检查项 | 说明 | 风险等级 |
-|--------|------|---------|
+|--------|------|--------|
 | 配置文件权限 | 检测 openclaw.json 文件权限是否安全 | MEDIUM |
 | 危险配置标志 | 检测是否存在危险配置选项如 allowAll、disableSafety 等 | HIGH |
 | 认证设置 | 检测认证模式是否启用，是否设置为 token | CRITICAL |
@@ -182,7 +205,7 @@
 <summary><b>技能包安全检测（skills）</b></summary>
 
 | 检查项 | 说明 | 风险等级 |
-|--------|------|---------|
+|--------|------|--------|
 | 恶意技能包 | 检测是否存在已知恶意技能包 | CRITICAL |
 | 技能包权限 | 检测技能包文件权限是否安全 | MEDIUM |
 
@@ -192,7 +215,7 @@
 <summary><b>端口暴露检测（ports）</b></summary>
 
 | 检查项 | 说明 | 风险等级 |
-|--------|------|---------|
+|--------|------|--------|
 | 绑定地址 | 检测绑定地址是否为 0.0.0.0，可能导致全网暴露 | CRITICAL |
 | CORS 配置 | 检测 CORS 配置是否安全，避免使用通配符 | HIGH |
 | 速率限制 | 检测是否配置了速率限制，防止暴力破解 | MEDIUM |
@@ -203,7 +226,7 @@
 <summary><b>认证与口令检测（auth）</b></summary>
 
 | 检查项 | 说明 | 风险等级 |
-|--------|------|---------|
+|--------|------|--------|
 | 认证启用 | 检测是否启用了认证功能 | CRITICAL |
 | 认证模式 | 检测认证模式是否为 token | CRITICAL |
 | 密码强度 | 检测密码强度是否足够 | HIGH |
@@ -217,7 +240,7 @@
 <summary><b>依赖供应链检测（deps）</b></summary>
 
 | 检查项 | 说明 | 风险等级 |
-|--------|------|---------|
+|--------|------|--------|
 | Node.js 依赖 | 检测 Node.js 依赖是否存在漏洞 | HIGH |
 | Python 依赖 | 检测 Python 依赖是否存在漏洞 | MEDIUM |
 
@@ -227,7 +250,7 @@
 <summary><b>主机安全检测（host）</b></summary>
 
 | 检查项 | 说明 | 风险等级 |
-|--------|------|---------|
+|--------|------|--------|
 | 可疑进程 | 检测是否存在可疑进程如挖矿程序、后门等 | CRITICAL |
 
 </details>
@@ -236,7 +259,7 @@
 <summary><b>密钥泄露检测（secrets）</b></summary>
 
 | 检查项 | 说明 | 风险等级 |
-|--------|------|---------|
+|--------|------|--------|
 | 敏感文件 | 检测是否存在敏感文件如私钥文件等 | CRITICAL |
 | 日志清理 | 检测日志文件中是否包含敏感信息 | MEDIUM |
 
@@ -246,7 +269,7 @@
 <summary><b>反代配置检测（proxy）</b></summary>
 
 | 检查项 | 说明 | 风险等级 |
-|--------|------|---------|
+|--------|------|--------|
 | 受信任代理 | 检测受信任代理配置是否安全 | MEDIUM |
 | X-Forwarded-For | 检测是否信任 X-Forwarded-For 头 | MEDIUM |
 | 安全头 | 检测是否添加了安全头 | LOW |
@@ -258,7 +281,7 @@
 <summary><b>运行时检查（runtime）</b></summary>
 
 | 检查项 | 说明 | 风险等级 |
-|--------|------|---------|
+|--------|------|--------|
 | 认证模式 | 检测运行时认证模式是否为 token | CRITICAL |
 | 命令限制 | 检测是否添加了关键命令限制 | HIGH |
 | 会话超时 | 检测会话超时设置是否合理 | MEDIUM |
@@ -273,7 +296,7 @@
 <summary><b>数据泄露防护检测（dlp）</b></summary>
 
 | 检查项 | 说明 | 风险等级 |
-|--------|------|---------|
+|--------|------|--------|
 | 文件哈希基线 | 检测是否创建了文件哈希基线 | MEDIUM |
 | Brain/Memory 备份 | 检测是否创建了 Brain/Memory 备份 | MEDIUM |
 | 敏感文件 | 检测是否备份并清理了敏感文件 | HIGH |
@@ -364,7 +387,7 @@
 ### 安全基线检查内容
 
 | 检查项 | 说明 | 风险等级 |
-|--------|------|---------|
+|--------|------|--------|
 | 配置文件权限 | 检测配置文件权限是否过于宽松 | MEDIUM |
 | 危险配置标志 | 检测是否启用了allowAll、disableSafety等危险配置 | HIGH/CRITICAL |
 | 认证设置 | 检测认证模式是否设置为token | HIGH |
@@ -394,6 +417,136 @@
 
 </details>
 
+### 龙虾安全守卫功能
+
+<details>
+<summary><b>安全审计（secureclaw_audit）</b></summary>
+
+| 检查项 | 说明 | 风险等级 |
+|--------|------|--------|
+| 配置审计 | 审计OpenClaw配置的安全性 | MEDIUM |
+| 权限审计 | 审计OpenClaw的权限设置 | HIGH |
+| 网络审计 | 审计OpenClaw的网络配置 | MEDIUM |
+| 日志审计 | 审计OpenClaw的日志配置 | LOW |
+
+### 检测方法
+- 检查openclaw.json配置文件
+- 分析权限设置和网络配置
+- 评估日志记录的完整性
+
+### 修复建议
+- 优化配置文件中的安全设置
+- 加强权限控制
+- 配置安全的网络设置
+- 完善日志记录
+
+</details>
+
+<details>
+<summary><b>自动加固（secureclaw_harden）</b></summary>
+
+| 检查项 | 说明 | 风险等级 |
+|--------|------|--------|
+| 配置加固 | 自动加固OpenClaw配置 | MEDIUM |
+| 权限加固 | 自动加固OpenClaw权限 | HIGH |
+| 网络加固 | 自动加固OpenClaw网络配置 | MEDIUM |
+
+### 检测方法
+- 分析当前配置
+- 识别安全风险
+- 自动应用加固措施
+
+### 修复建议
+- 运行自动加固功能
+- 定期进行安全加固
+- 监控加固效果
+
+</details>
+
+<details>
+<summary><b>技能扫描（secureclaw_skill_scan）</b></summary>
+
+| 检查项 | 说明 | 风险等级 |
+|--------|------|--------|
+| 恶意技能检测 | 检测是否存在恶意技能 | CRITICAL |
+| 技能权限检查 | 检查技能包权限是否安全 | MEDIUM |
+| 技能依赖检查 | 检查技能包依赖是否安全 | HIGH |
+
+### 检测方法
+- 扫描技能包目录
+- 分析技能包内容
+- 检查技能包权限
+
+### 修复建议
+- 删除恶意技能包
+- 修复技能包权限
+- 更新不安全的依赖
+
+</details>
+
+<details>
+<summary><b>文件完整性检查（secureclaw_integrity）</b></summary>
+
+| 检查项 | 说明 | 风险等级 |
+|--------|------|--------|
+| 系统文件完整性 | 检查系统文件是否被篡改 | CRITICAL |
+| 配置文件完整性 | 检查配置文件是否被篡改 | HIGH |
+| 技能包完整性 | 检查技能包是否被篡改 | MEDIUM |
+
+### 检测方法
+- 计算文件哈希值
+- 对比基准哈希值
+- 识别被篡改的文件
+
+### 修复建议
+- 恢复被篡改的文件
+- 加强文件权限控制
+- 定期进行完整性检查
+
+</details>
+
+<details>
+<summary><b>隐私检查（secureclaw_privacy）</b></summary>
+
+| 检查项 | 说明 | 风险等级 |
+|--------|------|--------|
+| 数据收集检查 | 检查是否存在过度数据收集 | MEDIUM |
+| 数据存储检查 | 检查数据存储是否安全 | HIGH |
+| 隐私政策检查 | 检查是否有隐私政策 | LOW |
+
+### 检测方法
+- 分析数据收集行为
+- 检查数据存储方式
+- 评估隐私政策的完整性
+
+### 修复建议
+- 减少不必要的数据收集
+- 加强数据存储安全
+- 完善隐私政策
+
+</details>
+
+<details>
+<summary><b>行为检测检查（secureclaw_behavior_rules）</b></summary>
+
+| 检查项 | 说明 | 风险等级 |
+|--------|------|--------|
+| 异常行为检测 | 检测是否存在异常行为 | CRITICAL |
+| 攻击行为检测 | 检测是否存在攻击行为 | CRITICAL |
+| 异常访问检测 | 检测是否存在异常访问 | HIGH |
+
+### 检测方法
+- 监控系统行为
+- 分析访问模式
+- 识别异常行为
+
+### 修复建议
+- 阻止异常行为
+- 加强访问控制
+- 定期进行行为检测
+
+</details>
+
 ---
 
 ## 评分体系
@@ -420,7 +573,15 @@
 
 HTML 报告采用插画风格设计，包含完整的检测结果和修复建议，方便您快速了解系统安全状态。
 
+### 安全守卫功能报告
 
+对于龙虾安全守卫功能，您可以单独导出HTML报告，包括：
+- 安全审计报告
+- 自动加固报告
+- 技能扫描报告
+- 文件完整性检查报告
+- 隐私检查报告
+- 行为检测检查报告
 
 ---
 
@@ -476,6 +637,7 @@ HTML 报告采用插画风格设计，包含完整的检测结果和修复建议
 | Feature | Description |
 |---------|-------------|
 | 🔍 **12 Check Modules** | config · skills · ports · auth · deps · host · secrets · proxy · runtime · dlp · vulnerability · baseline |
+| 🔒 **Lobster Security Guard** | Security audit · Auto hardening · Skill scanning · File integrity checking · Privacy checking · Behavior detection |
 | 💻 **Cross-Platform** | Supports Windows, Linux, macOS |
 | 🎨 **GUI Interface** | Intuitive graphical user interface, easy to use |
 | 🤖 **AI-Assisted Audit** | AI-powered deep security analysis |
@@ -504,7 +666,7 @@ HTML 报告采用插画风格设计，包含完整的检测结果和修复建议
 
 ### Using the Executable
 
-1. Download `焦糖布丁v1.0.exe` from the `build/windows/dist/` directory
+1. Download `焦糖布丁v4.0.exe` from the `build/windows/dist/` directory
 2. Double-click to run the executable
 3. Select the OpenClaw installation directory in the interface
 4. Check the security dimensions to scan
@@ -527,7 +689,24 @@ HTML 报告采用插画风格设计，包含完整的检测结果和修复建议
 
 ### Main Interface
 
-![image-20260322000201614](assets/image-20260322000201614.png)
+#### Basic Security Protection
+
+![image-20260324144427004](assets/image-20260324144427004.png)
+
+#### Advanced Protection
+
+![image-20260324144607860](assets/image-20260324144607860.png)
+
+#### Lobster Security Guard
+
+- Security audit
+- Auto hardening
+- Skills security scanning
+- Integrity checking
+- Privacy checking
+- Behavior detection checking
+
+![image-20260324144716786](assets/image-20260324144716786.png)
 
 ### Fix Risk Functionality (Some fixes are still in development)
 
@@ -537,29 +716,55 @@ HTML 报告采用插画风格设计，包含完整的检测结果和修复建议
 
 ![image-20260322000423166](assets/image-20260322000423166.png)
 
+### Vulnerability Scanning Function
+
+![image-20260323200226678](assets/image-20260323200226678.png)
+
 ### AI Deep Audit
 
-![image-20260322001038811](assets/image-20260322001038811.png)
+Deep audit functionality with local ollama model and cloud model integration
+
+#### AI Model Configuration
+
+![img](assets/567778403-00fb8731-62b1-4c60-960e-072213e7dcf3.png)
+
+#### qwen3.54b Deep Security Audit Report
+
+![image-20260323214029050](assets/image-20260323214029050.png)
+
+![image-20260323214242238](assets/image-20260323214242238.png)
+
+#### DeepSeek Deep Security Audit Report
+
+![image-20260323215629393](assets/image-20260323215629393.png)
+
+![image-20260323215903752](assets/image-20260323215903752.png)
+
+### Auto Hardening Function
+
+![image-20260324130603848](assets/image-20260324130603848.png)
 
 ### User Manual
 
-![image-20260322000519054](assets/image-20260322000519054.png)
+![image-20260324205017478](assets/image-20260324205017478.png)
 
 ### Fix Implementation (Some one-click fixes are still in development)
 
-![image-20260322000541664](assets/image-20260322000541664.png)
+![image-20260324205038390](assets/image-20260324205038390.png)
 
 ### About Tool
 
-![image-20260322001852156](assets/image-20260322001852156.png)
+![image-20260324205105710](assets/image-20260324205105710.png)
 
 ### Improvement Suggestions
 
-![image-20260322000706204](assets/image-20260322000706204.png)
+![image-20260324205134143](assets/image-20260324205134143.png)
 
 ---
 
 ## Check Modules
+
+### Basic Security Checks
 
 | Module | Key Areas |
 |--------|-----------|
@@ -575,6 +780,17 @@ HTML 报告采用插画风格设计，包含完整的检测结果和修复建议
 | **dlp** | File hash baseline, Brain/Memory backup, sensitive files |
 | **vulnerability** | CVE-2026-25253 (authentication token theft), default public exposure, plugin poisoning, permission escalation, architecture flaws, version vulnerabilities |
 | **baseline** | Configuration permissions, dangerous flags, authentication settings, network exposure, skills integrity, CORS configuration, rate limiting, command restrictions, session timeout, resource limits, logging, auto-update |
+
+### Lobster Security Guard Features
+
+| Module | Key Areas |
+|--------|-----------|
+| **secureclaw_audit** | Configuration audit, permission audit, network audit, log audit |
+| **secureclaw_harden** | Configuration hardening, permission hardening, network hardening |
+| **secureclaw_skill_scan** | Malicious skill detection, skill permission checking, skill dependency checking |
+| **secureclaw_integrity** | System file integrity, configuration file integrity, skill package integrity |
+| **secureclaw_privacy** | Data collection checking, data storage checking, privacy policy checking |
+| **secureclaw_behavior_rules** | Abnormal behavior detection, attack behavior detection, abnormal access detection |
 
 ---
 
@@ -600,6 +816,16 @@ After scanning, you can export reports in two formats:
 
 The HTML report uses an illustration style design, including complete scan results and fix suggestions, making it easy to quickly understand the system security status.
 
+### Lobster Security Guard Feature Reports
+
+For Lobster Security Guard features, you can export separate HTML reports including:
+- Security audit report
+- Auto hardening report
+- Skill scanning report
+- File integrity check report
+- Privacy check report
+- Behavior detection check report
+
 ---
 
 ## Fix Functionality
@@ -624,7 +850,7 @@ For detected security issues, you can:
 
 1. Click the "AI 深度审计" (AI Deep Audit) button in the interface
 2. The tool will generate an AI prompt template from the scan results and send it to AI for detailed analysis
-3. AI will provide more detailed security recommendations and fix solutions
+3. AI will provide more detailed security suggestions and fix solutions
 4. You can follow AI's suggestions for further security hardening
 
 ---

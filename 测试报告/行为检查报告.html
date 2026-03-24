@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦞焦糖布丁 为规则检查报告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+            margin: 40px;
+            background-color: #FFF9F0;
+            color: #2C2C2C;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            background-color: #73D13D;
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 3px solid #2C2C2C;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 4px 4px 0 #2C2C2C;
+            text-align: center;
+        }
+        .disclaimer {
+            background-color: #FFD93D;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+            text-align: center;
+            font-weight: bold;
+            color: #2C2C2C;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAgMTAgMTgwIDE4MCIgZmlsbD0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0xMCAxODAgMTgwIDEwIiBmaWxsPSIjZmZmZmZmIi8+PHBhdGggZD0iTTEwIDkwIDE4MCA5MCIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPg==') no-repeat center;
+            background-size: contain;
+            opacity: 0.2;
+        }
+        .info-card {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+            text-align: center;
+        }
+        .info-card h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2C2C2C;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-card p {
+            font-size: 16px;
+            color: #2C2C2C;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+        }
+        th {
+            background-color: #73D13D;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            color: white;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #2C2C2C;
+        }
+        tr:hover {
+            background-color: #F0F0F0;
+        }
+        .recommendation {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 30px;
+            border: 3px solid #2C2C2C;
+            box-shadow: 4px 4px 0 #2C2C2C;
+        }
+        .recommendation h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2C2C2C;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .recommendation ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .recommendation li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .recommendation li::before {
+            content: '•';
+            color: #73D13D;
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦞 焦糖布丁 行为规则检查报告</h1>
+            <p>生成时间: 2026-03-24 20:40:51</p>
+            <p>检测工具: 🦞 焦糖布丁</p>
+            <p>工具作者: 0x八月</p>
+        </div>
+        
+        <div class="disclaimer">
+            ⚠️ 工具修复方案和内容仅供参考，由于传播、利用此工具所提供的信息而造成的任何直接或者间接的后果及损失，均由使用者本人负责，作者不为此承担任何责任。
+        </div>
+
+        <div class="info-card">
+            <h2>检查结果</h2>
+            <p>安全评分: 33/100</p>
+            <p>通过规则: 5/15</p>
+            <p>违规数量: 10</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>规则名称</th>
+                    <th>违规详情</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>unauthorized_access</td>
+                    <td>未配置认证令牌，存在未授权访问风险</td>
+                </tr>
+
+                <tr>
+                    <td>data_exfiltration</td>
+                    <td>未启用沙箱，存在数据泄露风险</td>
+                </tr>
+
+                <tr>
+                    <td>malicious_code</td>
+                    <td>技能 word-docx-1.0.2 中发现可疑代码</td>
+                </tr>
+
+                <tr>
+                    <td>resource_abuse</td>
+                    <td>未设置资源限制，可能存在资源滥用风险</td>
+                </tr>
+
+                <tr>
+                    <td>network_scanning</td>
+                    <td>网关绑定到非本地地址，可能存在网络扫描风险</td>
+                </tr>
+
+                <tr>
+                    <td>process_creation</td>
+                    <td>未启用沙箱，存在进程创建风险</td>
+                </tr>
+
+                <tr>
+                    <td>registry_modification</td>
+                    <td>未启用沙箱，存在注册表修改风险</td>
+                </tr>
+
+                <tr>
+                    <td>persistence_attempts</td>
+                    <td>未启用沙箱，存在持久化风险</td>
+                </tr>
+
+                <tr>
+                    <td>suspicious_connections</td>
+                    <td>网关绑定到非本地地址，可能存在可疑连接风险</td>
+                </tr>
+
+                <tr>
+                    <td>unusual_behavior</td>
+                    <td>未启用审批模式，可能无法检测异常行为</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="recommendation">
+            <h2>安全建议</h2>
+            <ul>
+                <li>定期检查系统行为，确保符合安全规则</li>
+                <li>修复发现的行为规则违规</li>
+                <li>建立行为规则监控机制，及时发现异常</li>
+                <li>结合其他安全检测，全面提升系统安全水平</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
