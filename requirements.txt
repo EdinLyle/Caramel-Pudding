@@ -1,0 +1,5 @@
+customtkinter>=5.2.0
+Pillow>=10.0.0
+pyyaml>=6.0.1
+psutil>=5.9.0
+requests>=2.31.0
