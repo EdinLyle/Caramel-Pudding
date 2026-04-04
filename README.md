@@ -1,6 +1,7 @@
 <div align="center">
 <h1>🦞 焦糖布丁v4.0</h1>
 <h3>OpenClaw 基线安全检测和漏洞扫描工具</h3>
+<p><em>如果师傅觉得工具有用的话，不妨给个Star🌟</em></p>
 
 <p>
   <a href="#-快速开始"><img src="https://img.shields.io/badge/快速开始-中文-blue?style=flat-square" alt="快速开始"></a>
